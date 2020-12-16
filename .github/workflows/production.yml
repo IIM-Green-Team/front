@@ -27,3 +27,22 @@ jobs:
           file: ./containers/app-production/Dockerfile
           push: true
           tags: ${{ secrets.SCALEWAY_REGISTRY }}/${{ secrets.SCALEWAY_APP_IMAGE_PREFIX }}_production:latest
+      - name: clone devops repo
+        run: git clone https://github.com/IIM-Green-Team/devops
+      - name: create ssh folder
+        run: |
+          mkdir -p ./keys/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ./keys/.ssh/id_rsa
+          chmod 600 ./keys/.ssh/id_rsa
+      - name: run ansible playbook
+        uses: dawidd6/action-ansible-playbook@v2
+        with:
+          directory: ./devops/automation/ansible
+          playbook: production.yml
+          vault_password: ${{ secrets.VAULT_PASS }}
+          options: |
+            --inventory ./inventory/hosts
+            --key ../../keys/.ssh/id_rsa
+        env:
+          ANSIBLE_HOST_KEY_CHECKING: False
+    
