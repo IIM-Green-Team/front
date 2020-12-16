@@ -2,23 +2,36 @@ name: build
 on:
   push:
     branches:
-      - chore/add-cd
+      - master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Cloning repo
         uses: actions/checkout@v2
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
+
       - name: Set up Docker Buildx
+        id: buildx
         uses: docker/setup-buildx-action@v1
+
+      - name: Cache Docker layers
+        uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
       - name: Login to DockerHub
         uses: docker/login-action@v1 
         with:
           registry: ${{ secrets.SCALEWAY_REGISTRY }}
           username: ${{ secrets.SCALEWAY_REGISTRY_LOGIN }}
           password: ${{ secrets.SCALEWAY_SECRET_KEY }}
+
       - name: Build and push client
         id: docker_build_client
         uses: docker/build-push-action@v2
@@ -27,13 +40,22 @@ jobs:
           file: ./containers/app-production/Dockerfile
           push: true
           tags: ${{ secrets.SCALEWAY_REGISTRY }}/${{ secrets.SCALEWAY_APP_IMAGE_PREFIX }}_production:latest
-      - name: clone devops repo
+          builder: ${{ steps.buildx.outputs.name }}
+          cache-from: type=registry,ref=${{ secrets.SCALEWAY_REGISTRY }}/${{ secrets.SCALEWAY_APP_IMAGE_PREFIX }}_production:latest
+          cache-to: type=inline
+
+      - name: Clone devops repo
         run: git clone https://github.com/IIM-Green-Team/devops
+
       - name: create ssh folder
         run: |
-          mkdir -p ./keys/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ./keys/.ssh/id_rsa
-          chmod 600 ./keys/.ssh/id_rsa
+          mkdir -p ./devops/automation/ansible/keys/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ./devops/automation/ansible/keys/.ssh/id_rsa
+          chmod 600 ./devops/automation/ansible/keys/.ssh/id_rsa
+      - name: create vault_pass file
+        run: |
+          echo "${{ secrets.VAULT_PASS }}" > ./devops/automation/ansible/.vault_pass
+
       - name: run ansible playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
@@ -42,7 +64,7 @@ jobs:
           vault_password: ${{ secrets.VAULT_PASS }}
           options: |
             --inventory ./inventory/hosts
-            --key ../../keys/.ssh/id_rsa
+            --key ./keys/.ssh/id_rsa
         env:
           ANSIBLE_HOST_KEY_CHECKING: False
     
