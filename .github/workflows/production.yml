@@ -3,8 +3,40 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - 'README.md'
 jobs:
-  build-and-deploy:
+  static-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning repo
+        uses: actions/checkout@v2
+
+      - name: Use node.js in runner
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependancies
+        run: yarn --frozen-lockfile
+
+      - name: Build project
+        run: yarn build
+
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-artifact
+          path: ./dist
+
+  build-with-docker:
+    needs: static-build
     runs-on: ubuntu-latest
     steps:
       - name: Cloning repo
@@ -24,6 +56,12 @@ jobs:
           key: ${{ runner.os }}-buildx-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-buildx-
+      
+      - name: Download build from static build job
+        uses: actions/download-artifact@v2
+        with:
+          name: dist-artifact
+          path: ./dist
 
       - name: Login to DockerHub
         uses: docker/login-action@v1 
