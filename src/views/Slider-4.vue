@@ -13,12 +13,13 @@
       </div>
     </div> -->
     <div class="col-12">
-      <p class="c-slide__title title p-italic">
+      <p class="h3 u-center">NOTRE CONSOMMATION EN EAU</p>
+      <p class="title p-italic">
         → La consommation moyenne d'eau d'un francais par jour ...
       </p>
     </div>
     <div class="col-12">
-      <p>{{this.dailyValue}} L / jour</p>
+      <p>{{ this.dailyValue }} L / jour</p>
       <div class="content-chart">
         <canvas id="planet-chart"></canvas>
       </div>

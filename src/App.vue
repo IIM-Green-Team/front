@@ -28,6 +28,39 @@
           classique.
         </p>
       </div>
+      <div v-if="this.index == 4">
+        <p class="h4">Astuce textile :</p>
+        <p>
+          - Acheter moins mais mieux<br />
+          - Acheter des vêtements de seconde main <br />
+          - Réparer ses vêtements, leur donner une seconde vie<br />
+          - Prêter, troquer, donner et même louer ses vêtements
+        </p>
+        <p class="h4">Le saviez-vous?</p>
+        <p>
+          Pour laver vos vêtements, faites votre lessive vous même : 23,25 euros
+          / an La lessive maison demande peu de temps de préparation. Vous
+          saurez ce que vous mettez dedans, et vous ferez des économies ! Que
+          demander de plus ?
+        </p>
+      </div>
+      <div v-if="this.index == 6">
+        <p class="h4">Astuce eau :</p>
+        <p>
+          - Vérifier régulièrement l’état des robinets<br />
+          - Prendre une douche courte plutôt que des bains <br />
+          - Récupérer les eaux de pluie<br />
+          - Utiliser du papier 100% recyclé et limiter les impressions
+        </p>
+        <p class="h4">Le saviez-vous?</p>
+        <p>
+          Investir dans une gourde: 218 euros d’économie / an Moins d'un centime
+          d'euros le litre pour l'eau du robinet contre 40 centimes le litre
+          pour l'eau minérale, le choix est vite fait ! Une fois passé le prix
+          d'achat d'une gourde (une dizaine d'euros), le gain annuel est de 218
+          euros par an. Les océans vous remercieront !
+        </p>
+      </div>
     </div>
 
     <div class="container">
@@ -66,7 +99,7 @@
               <p
                 v-on:click="swiper.slideTo(0, false)"
                 class="nav-link slide-1"
-                v-bind:class="`${this.index >= 0 ? 'is-active' : ''}`"
+                v-bind:class="`${(this.index >= 0 ? 'is-active' : '')}`"
               >
                 <!-- Etat des lieux -->
               </p>
@@ -74,35 +107,53 @@
             <li>
               <p
                 v-on:click="swiper.slideTo(1, false)"
-                class="nav-link slide-2"
+                class="nav-link slide-2 is-small"
                 v-bind:class="`${this.index >= 1 ? 'is-active' : ''}`"
               >
-                <!-- Alimentation -->
+                <!-- Intro Alimentation -->
               </p>
             </li>
             <li>
               <p
                 v-on:click="swiper.slideTo(2, false)"
                 class="nav-link slide-3"
-                v-bind:class="`${this.index >= 3 ? 'is-active' : ''}`"
+                v-bind:class="`${this.index >= 2 ? 'is-active' : ''}`"
               >
-                <!-- hygiène et intimité -->
+                <!--  Alimentation -->
               </p>
             </li>
             <li>
               <p
                 v-on:click="swiper.slideTo(3, false)"
+                class="nav-link slide-2 is-small"
+                v-bind:class="`${this.index >= 3 ? 'is-active' : ''}`"
+              >
+                <!-- Intro Textile -->
+              </p>
+            </li>
+            <li>
+              <p
+                v-on:click="swiper.slideTo(4, false)"
                 class="nav-link slide-4"
-                v-bind:class="`${this.index >= 5 ? 'is-active' : ''}`"
+                v-bind:class="`${this.index >= 4 ? 'is-active' : ''}`"
               >
                 <!-- Industrie textile et mode -->
               </p>
             </li>
             <li>
               <p
-                v-on:click="swiper.slideTo(4, false)"
+                v-on:click="swiper.slideTo(5, false)"
+                class="nav-link slide-2 is-small"
+                v-bind:class="`${this.index >= 5 ? 'is-active' : ''}`"
+              >
+                <!-- Intro Energie et eau  -->
+              </p>
+            </li>
+            <li>
+              <p
+                v-on:click="swiper.slideTo(6, false)"
                 class="nav-link slide-5"
-                v-bind:class="`${this.index >= 7 ? 'is-active' : ''}`"
+                v-bind:class="`${this.index >= 6 ? 'is-active' : ''}`"
               >
                 <!-- Energie et eau -->
               </p>
@@ -153,7 +204,15 @@
         </swiper-slide>
 
         <swiper-slide>
+          <Slider5Intro />
+        </swiper-slide>
+
+        <swiper-slide>
           <Slider5 />
+        </swiper-slide>
+
+        <swiper-slide>
+          <Slider6 />
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
@@ -177,10 +236,12 @@ import Slider2 from "../src/views/Slider-2";
 import Slider3 from "../src/views/Slider-3";
 import Slider4 from "../src/views/Slider-4";
 import Slider5 from "../src/views/Slider-5";
+import Slider6 from "../src/views/Slider-6";
 // import Introduction from "../src/views/Introduction";
 import Slider2Intro from "../src/views/Slider2Intro";
 import Slider3Intro from "../src/views/Slider3Intro";
 import Slider4Intro from "../src/views/Slider4Intro";
+import Slider5Intro from "../src/views/Slider5Intro";
 
 export default {
   components: {
@@ -191,9 +252,11 @@ export default {
     Slider3,
     Slider4,
     Slider5,
+    Slider6,
     Slider2Intro,
     Slider3Intro,
     Slider4Intro,
+    Slider5Intro,
     // Introduction,
   },
   directives: {

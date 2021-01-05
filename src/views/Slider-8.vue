@@ -1,73 +1,67 @@
 <template>
   <div class="c-form">
     <div class="u-flex">
-      <p class="col-12 c-form__title">Achètes-tu uniquement du bio ?</p>
+      <p class="col-12 c-form__title">
+        À quelle fréquence achetez-vous vos vêtements ?
+      </p>
       <div class="c-form__group c-form__group--radio">
         <input class="radio" type="radio" name="q1" id="1" required />
-        <label for="1">Jamais <span></span></label>
+        <label for="1">Plusieurs fois par semaine <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
         <input class="radio" type="radio" name="q1" id="2" required />
-        <label for="2">1 repas sur 2 <span></span></label>
+        <label for="2">Une fois par mois <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
         <input class="radio" type="radio" name="q1" id="3" required />
-        <label for="3">Tous les repas <span></span></label>
+        <label for="3">Une fois par an <span></span></label>
       </div>
-    </div>
-    <div class="u-flex">
-      <p class="col-12 c-form__title">
-        A quelle fréquence mangez-vous des plats contenant de la viande ou du
-        poisson
-      </p>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q2" id="4" required />
+        <input class="radio" type="radio" name="q1" id="4" required />
         <label for="4">Jamais <span></span></label>
       </div>
-      <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q2" id="5" required />
-        <label for="5">1 repas sur 2 <span></span></label>
-      </div>
-      <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q2" id="6" required />
-        <label for="6">Tous les repas <span></span></label>
-      </div>
     </div>
     <div class="u-flex">
       <p class="col-12 c-form__title">
-        A quelle fréquence consommez-vous des produits laitiers ?
+        À quelle fréquence jetez-vous vos vêtements ?
       </p>
       <div class="c-form__group c-form__group--radio">
+        <input class="radio" type="radio" name="q1" id="1" required />
+        <label for="1">Plusieurs fois par semaine <span></span></label>
+      </div>
+      <div class="c-form__group c-form__group--radio">
+        <input class="radio" type="radio" name="q1" id="2" required />
+        <label for="2">Une fois par mois <span></span></label>
+      </div>
+      <div class="c-form__group c-form__group--radio">
+        <input class="radio" type="radio" name="q1" id="3" required />
+        <label for="3">Une fois par an <span></span></label>
+      </div>
+      <div class="c-form__group c-form__group--radio">
+        <input class="radio" type="radio" name="q1" id="4" required />
+        <label for="4">Jamais <span></span></label>
+      </div>
+    </div>
+    <div class="u-flex">
+      <p class="col-12 c-form__title">Où achetez-vous vos vétements ?</p>
+      <div class="c-form__group c-form__group--radio">
         <input class="radio" type="radio" name="q3" id="7" required />
-        <label for="7">Jamais <span></span></label>
+        <label for="7">Magasin (Zara, H&M etc..) <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
         <input class="radio" type="radio" name="q3" id="8" required />
-        <label for="8">1 repas sur 2 <span></span></label>
+        <label for="8">En ligne (Asos) <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
         <input class="radio" type="radio" name="q3" id="9" required />
-        <label for="9">Tous les repas <span></span></label>
+        <label for="9">Site de revente (Vinted) <span></span></label>
+      </div>
+      <div class="c-form__group c-form__group--radio">
+        <input class="radio" type="radio" name="q3" id="9" required />
+        <label for="9">Friperie <span></span></label>
       </div>
     </div>
 
-    <div class="u-flex">
-      <p class="col-12 c-form__title">
-        À quelle fréquence jetez-vous de la nourriture ?
-      </p>
-      <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q3" id="7" required />
-        <label for="7">Plusieurs fois par semaine <span></span></label>
-      </div>
-      <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q3" id="8" required />
-        <label for="8">De temps en temps <span></span></label>
-      </div>
-      <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q3" id="9" required />
-        <label for="9">Presque jamais <span></span></label>
-      </div>
-    </div>
     <button class="c-form__btn">Suivant</button>
   </div>
 </template>

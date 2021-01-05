@@ -1,9 +1,10 @@
 <template>
   <div class="u-flex c-graph3">
     <div class="col-12">
-      <p class="c-slide__title title p-italic">
+      <p class="h3 u-center">Notre impact sur le textile</p>
+      <!-- <p class="c-slide__title title p-italic">
         → Pourquoi le textile consomme beaucoup de déchets ...
-      </p>
+      </p> -->
     </div>
     <div class="col-4">
       <p style="margin-bottom: 20px">
@@ -25,8 +26,8 @@
         jean
       </p>
       <p>
-        <span class="text--xl">15 000 T</span> de produits textiles sont détruits
-        en France soit l’équivalent du poids d’une ou deux Tour Eiffel
+        <span class="text--xl">15 000 T</span> de produits textiles sont
+        détruits en France soit l’équivalent du poids d’une ou deux Tour Eiffel
       </p>
     </div>
   </div>

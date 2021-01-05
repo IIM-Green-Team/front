@@ -42,8 +42,17 @@ nav {
         border-radius: 50%;
         background-color: $color-yellow
       }
+    }
 
-      ;
+    &.is-small {
+      margin-top: 2px;
+      width: 16px;
+      height: 16px;
+
+      &::before {
+        width: 11px;
+        height: 11px;
+      }
     }
   }
 

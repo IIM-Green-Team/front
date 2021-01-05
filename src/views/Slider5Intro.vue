@@ -1,0 +1,7 @@
+<template>
+  <div style="height: 100%" class="u-flex justify-content-center align-items-center">
+    <div class="col-8">
+      <h2 class="h2">Votre note green</h2>
+    </div>
+  </div>
+</template>

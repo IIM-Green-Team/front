@@ -1,9 +1,12 @@
 .c-form {
+  margin: auto;
+  width: 70%;
   margin-top: 150px;
   justify-content: center;
 
   &__title {
     font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
   }
 
   &__column {
@@ -13,7 +16,7 @@
   }
 
   &__group {
-    width: 60%;
+    margin-right: 20px;
     margin-bottom: 50px;
 
     input,
