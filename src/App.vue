@@ -99,7 +99,7 @@
               <p
                 v-on:click="swiper.slideTo(0, false)"
                 class="nav-link slide-1"
-                v-bind:class="`${(this.index >= 0 ? 'is-active' : '')}`"
+                v-bind:class="`${this.index >= 0 ? 'is-active' : ''}`"
               >
                 <!-- Etat des lieux -->
               </p>
@@ -160,7 +160,7 @@
             </li>
           </ul>
         </nav>
-        <div class="btn-next swiper-button-next">
+        <div v-if="this.index <= 7" class="btn-next swiper-button-next">
           <div class="content"></div>
           <div class="arrow"></div>
         </div>
@@ -214,6 +214,14 @@
         <swiper-slide>
           <Slider6 />
         </swiper-slide>
+
+        <swiper-slide>
+          <Slider7 />
+        </swiper-slide>
+
+        <swiper-slide>
+          <Slider8 />
+        </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
     </div>
@@ -237,6 +245,8 @@ import Slider3 from "../src/views/Slider-3";
 import Slider4 from "../src/views/Slider-4";
 import Slider5 from "../src/views/Slider-5";
 import Slider6 from "../src/views/Slider-6";
+import Slider7 from "../src/views/Slider-7";
+import Slider8 from "../src/views/Slider-8";
 // import Introduction from "../src/views/Introduction";
 import Slider2Intro from "../src/views/Slider2Intro";
 import Slider3Intro from "../src/views/Slider3Intro";
@@ -253,6 +263,8 @@ export default {
     Slider4,
     Slider5,
     Slider6,
+    Slider7,
+    Slider8,
     Slider2Intro,
     Slider3Intro,
     Slider4Intro,
@@ -269,6 +281,10 @@ export default {
       isPaused: true,
       index: 0,
       next: 0,
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        draggable: true,
+      },
       swiperOptions: {
         navigation: {
           nextEl: ".swiper-button-next",

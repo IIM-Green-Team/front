@@ -1,5 +1,5 @@
 <template>
-  <div class="u-flex c-graph3">
+  <div class="u-flex c-graph3 slider-3">
     <div class="col-12">
       <p class="h3 u-center">Notre impact sur le textile</p>
       <!-- <p class="c-slide__title title p-italic">

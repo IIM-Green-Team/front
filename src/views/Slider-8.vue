@@ -2,7 +2,7 @@
   <div class="c-form">
     <div class="u-flex">
       <p class="col-12 c-form__title">
-        À quelle fréquence achetez-vous vos vêtements ?
+       Quelle est la durée moyenne de vos douches ?
       </p>
       <div class="c-form__group c-form__group--radio">
         <input class="radio" type="radio" name="q1" id="1" required />
@@ -23,7 +23,7 @@
     </div>
     <div class="u-flex">
       <p class="col-12 c-form__title">
-        À quelle fréquence jetez-vous vos vêtements ?
+        Prends-tu des bains ?
       </p>
       <div class="c-form__group c-form__group--radio">
         <input class="radio" type="radio" name="q1" id="1" required />
@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class="u-flex">
-      <p class="col-12 c-form__title">Où achetez-vous vos vétements ?</p>
+      <p class="col-12 c-form__title">Comment fais-tu ta vaisselle ?</p>
       <div class="c-form__group c-form__group--radio">
         <input class="radio" type="radio" name="q3" id="7" required />
         <label for="7">Magasin (Zara, H&M etc..) <span></span></label>
@@ -52,17 +52,9 @@
         <input class="radio" type="radio" name="q3" id="8" required />
         <label for="8">En ligne (Asos) <span></span></label>
       </div>
-      <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q3" id="9" required />
-        <label for="9">Site de revente (Vinted) <span></span></label>
-      </div>
-      <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q3" id="9" required />
-        <label for="9">Friperie <span></span></label>
-      </div>
     </div>
 
-    <button class="c-form__btn">Suivant</button>
+    <button type="submit" class="c-form__btn">Découvrir ma note</button>
   </div>
 </template>
 

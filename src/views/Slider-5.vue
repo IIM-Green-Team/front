@@ -56,19 +56,19 @@
         À quelle fréquence jetez-vous de la nourriture ?
       </p>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q3" id="7" required />
-        <label for="7">Plusieurs fois par semaine <span></span></label>
+        <input class="radio" type="radio" name="q4" id="10" required />
+        <label for="10">Plusieurs fois par semaine <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q3" id="8" required />
-        <label for="8">De temps en temps <span></span></label>
+        <input class="radio" type="radio" name="q4" id="11" required />
+        <label for=11>De temps en temps <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q3" id="9" required />
-        <label for="9">Presque jamais <span></span></label>
+        <input class="radio" type="radio" name="q4" id="12" required />
+        <label for="12">Presque jamais <span></span></label>
       </div>
     </div>
-    <button class="c-form__btn">Suivant</button>
+    <button class="c-form__btn swiper-button-next">Suivant</button>
   </div>
 </template>
 

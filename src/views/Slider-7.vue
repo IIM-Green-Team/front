@@ -2,67 +2,50 @@
   <div class="c-form">
     <div class="u-flex">
       <p class="col-12 c-form__title">
-        À quelle fréquence achetez-vous vos vêtements ?
+        Tries-tu les journaux, les boîtes en carton, le papier, les boîtes de
+        conserve, les bouteilles en verre ou en plastique et autres matériaux ?
       </p>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q1" id="1" required />
-        <label for="1">Plusieurs fois par semaine <span></span></label>
+        <input class="radio" type="radio" name="q8" id="26" required />
+        <label for="26">Oui <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q1" id="2" required />
-        <label for="2">Une fois par mois <span></span></label>
-      </div>
-      <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q1" id="3" required />
-        <label for="3">Une fois par an <span></span></label>
-      </div>
-      <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q1" id="4" required />
-        <label for="4">Jamais <span></span></label>
+        <input class="radio" type="radio" name="q8" id="27" required />
+        <label for="27">Non <span></span></label>
       </div>
     </div>
     <div class="u-flex">
-      <p class="col-12 c-form__title">
-        À quelle fréquence jetez-vous vos vêtements ?
-      </p>
+      <p class="col-12 c-form__title">Faites-vous du compostage ?</p>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q1" id="1" required />
-        <label for="1">Plusieurs fois par semaine <span></span></label>
+        <input class="radio" type="radio" name="q9" id="28" required />
+        <label for="28">Oui <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q1" id="2" required />
-        <label for="2">Une fois par mois <span></span></label>
-      </div>
-      <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q1" id="3" required />
-        <label for="3">Une fois par an <span></span></label>
-      </div>
-      <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q1" id="4" required />
-        <label for="4">Jamais <span></span></label>
+        <input class="radio" type="radio" name="q9" id="29" required />
+        <label for="29">Non <span></span></label>
       </div>
     </div>
     <div class="u-flex">
-      <p class="col-12 c-form__title">Où achetez-vous vos vétements ?</p>
+      <p class="col-12 c-form__title">Comment te rends tu au travail/école ?</p>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q3" id="7" required />
-        <label for="7">Magasin (Zara, H&M etc..) <span></span></label>
+        <input class="radio" type="radio" name="q10" id="30" required />
+        <label for="30">Pied / Vélo <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q3" id="8" required />
-        <label for="8">En ligne (Asos) <span></span></label>
+        <input class="radio" type="radio" name="q11" id="31" required />
+        <label for="31">Trotinette/Vélo électrique <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q3" id="9" required />
-        <label for="9">Site de revente (Vinted) <span></span></label>
+        <input class="radio" type="radio" name="q12" id="32" required />
+        <label for="32">Transport en commun <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q3" id="9" required />
-        <label for="9">Friperie <span></span></label>
+        <input class="radio" type="radio" name="q13" id="33" required />
+        <label for="33">Voiture <span></span></label>
       </div>
     </div>
 
-    <button class="c-form__btn">Suivant</button>
+    <button class="c-form__btn swiper-button-next">Suivant</button>
   </div>
 </template>
 
@@ -70,15 +53,7 @@
 <script>
 export default {
   data() {
-    return {
-      select1Normal: "",
-      select1: 2,
-      options1: [
-        { text: "IT", value: 0 },
-        { text: "Blade Runner", value: 2 },
-        { text: "Thor Ragnarok", value: 3 },
-      ],
-    };
+    return {};
   },
 };
 </script>
