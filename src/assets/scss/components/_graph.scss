@@ -8,6 +8,7 @@
   padding-bottom: 20px;
 
   .img-planet {
+    padding: 5px 0;
     width: 50%;
   }
 
@@ -40,8 +41,8 @@
     bottom: 0;
     margin-bottom: 20px;
     border: solid 1px $color-black;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 48px;
+    border-bottom-right-radius: 48px;
     border-top-width: 0;
 
     &:after {
@@ -50,8 +51,8 @@
       bottom: 0;
       width: 100%;
       height: 80%;
-      border-bottom-left-radius: 9px;
-      border-bottom-right-radius: 9px;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
       background-color: rgb(96, 121, 152);
     }
   }
@@ -73,7 +74,7 @@
   margin-top: 50px;
 
   .img-man {
-    width: 80%;
+    width: 55%;
   }
 }
 

@@ -17,8 +17,10 @@
         serre par an à cause de la production et le transport des textiles
       </p>
     </div>
-    <div class="col-4">
-      <img class="img-man" :src="'./img/man.png'" alt="man" />
+    <div class="col-4 u-flex flex-column align-items-center">
+      <img class="img-man" :src="'./img/tshirt.png'" alt="man" />
+      <img class="img-man" :src="'./img/jean.png'" alt="man" />
+      <img class="img-man" :src="'./img/basket.png'" alt="man" />
     </div>
     <div class="col-4">
       <p style="margin-bottom: 50px">
@@ -35,13 +37,7 @@
 
 
 <script>
-// import Bottle from "../components/Bottle";
-
 export default {
-  components: {
-    // Bottle,
-  },
   name: "Sldier3",
-  data() {},
 };
 </script>

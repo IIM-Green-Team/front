@@ -2,59 +2,137 @@
   <div class="c-form">
     <div class="u-flex">
       <p class="col-12 c-form__title">
-       Quelle est la durée moyenne de vos douches ?
+        Quelle est la durée moyenne de vos douches ?
       </p>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q1" id="1" required />
-        <label for="1">Plusieurs fois par semaine <span></span></label>
+        <input
+          class="radio"
+          type="radio"
+          name="q14"
+          id="40"
+          value="1"
+          v-model="picked11"
+          required
+        />
+        <label for="40">Plusieurs fois par semaine <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q1" id="2" required />
-        <label for="2">Une fois par mois <span></span></label>
+        <input
+          class="radio"
+          type="radio"
+          name="q14"
+          id="41"
+          value="2"
+          v-model="picked11"
+          required
+        />
+        <label for="41">Une fois par mois <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q1" id="3" required />
-        <label for="3">Une fois par an <span></span></label>
+        <input
+          class="radio"
+          type="radio"
+          name="q14"
+          id="42"
+          value="3"
+          v-model="picked11"
+          required
+        />
+        <label for="42">Une fois par an <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q1" id="4" required />
-        <label for="4">Jamais <span></span></label>
+        <input
+          class="radio"
+          type="radio"
+          name="q14"
+          id="43"
+          value="4"
+          v-model="picked11"
+          required
+        />
+        <label for="43">Jamais <span></span></label>
       </div>
     </div>
     <div class="u-flex">
-      <p class="col-12 c-form__title">
-        Prends-tu des bains ?
-      </p>
+      <p class="col-12 c-form__title">Prends-tu des bains ?</p>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q1" id="1" required />
-        <label for="1">Plusieurs fois par semaine <span></span></label>
+        <input
+          class="radio"
+          type="radio"
+          name="q15"
+          id="44"
+          value="1"
+          v-model="picked12"
+          required
+        />
+        <label for="44">Plusieurs fois par semaine <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q1" id="2" required />
-        <label for="2">Une fois par mois <span></span></label>
+        <input
+          class="radio"
+          type="radio"
+          name="q15"
+          id="45"
+          value="2"
+          v-model="picked12"
+          required
+        />
+        <label for="45">Une fois par mois <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q1" id="3" required />
-        <label for="3">Une fois par an <span></span></label>
+        <input
+          class="radio"
+          type="radio"
+          name="q15"
+          id="46"
+          value="3"
+          v-model="picked12"
+          required
+        />
+        <label for="46">Une fois par an <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q1" id="4" required />
-        <label for="4">Jamais <span></span></label>
+        <input
+          class="radio"
+          type="radio"
+          name="q15"
+          id="47"
+          value="4"
+          v-model="picked12"
+          required
+        />
+        <label for="47">Jamais <span></span></label>
       </div>
     </div>
     <div class="u-flex">
       <p class="col-12 c-form__title">Comment fais-tu ta vaisselle ?</p>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q3" id="7" required />
-        <label for="7">Magasin (Zara, H&M etc..) <span></span></label>
+        <input
+          class="radio"
+          type="radio"
+          name="q16"
+          id="48"
+          value="1"
+          v-model="picked13"
+          required
+        />
+        <label for="48">Avec un lave vaiselle <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
-        <input class="radio" type="radio" name="q3" id="8" required />
-        <label for="8">En ligne (Asos) <span></span></label>
+        <input
+          class="radio"
+          type="radio"
+          name="q16"
+          id="49"
+          value="2"
+          v-model="picked13"
+          required
+        />
+        <label for="49">A la main <span></span></label>
       </div>
     </div>
 
-    <button type="submit" class="c-form__btn">Découvrir ma note</button>
+    <button class="c-form__btn swiper-button-next">Découvrir ma note</button>
   </div>
 </template>
 
@@ -63,14 +141,36 @@
 export default {
   data() {
     return {
-      select1Normal: "",
-      select1: 2,
-      options1: [
-        { text: "IT", value: 0 },
-        { text: "Blade Runner", value: 2 },
-        { text: "Thor Ragnarok", value: 3 },
-      ],
+      picked11: 0,
+      picked12: 0,
+      picked13: 0,
     };
+  },
+  watch: {
+    picked11: function () {
+      this.$emit(
+        "child-total4",
+        parseInt(this.picked11) +
+          parseInt(this.picked12) +
+          parseInt(this.picked13)
+      );
+    },
+    picked12: function () {
+      this.$emit(
+        "child-total4",
+        parseInt(this.picked11) +
+          parseInt(this.picked12) +
+          parseInt(this.picked13)
+      );
+    },
+    picked13: function () {
+      this.$emit(
+        "child-total4",
+        parseInt(this.picked11) +
+          parseInt(this.picked12) +
+          parseInt(this.picked13)
+      );
+    },
   },
 };
 </script>

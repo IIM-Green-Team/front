@@ -1,25 +1,13 @@
 <template>
-  <div class="u-flex c-graph4">
-    <!-- <div class="col-6">
-      <div v-bind:style="{ height: this.height + '%' }" class="bar"></div>
-    </div>
-    <div class="menu col-6">
-      <p v-on:click="this.calcHeight">CLICK</p>
-      <div>
-        <div v-for="item in items" :key="item.name">
-          <span class="btn">{{ item.name }}</span>
-          <span v-on:click="item.isActive = !item.isActive">Toggle</span>
-        </div>
-      </div>
-    </div> -->
+  <div class="u-flex c-graph4 slider-4">
     <div class="col-12">
-      <p class="h3 u-center">NOTRE CONSOMMATION EN EAU</p>
+      <p class=" h3 u-center">NOTRE CONSOMMATION EN EAU</p>
       <p class="title p-italic">
         → La consommation moyenne d'eau d'un francais par jour ...
       </p>
     </div>
     <div class="col-12">
-      <p>{{ this.dailyValue }} L / jour</p>
+      <p class="text--xl u-center">{{ this.dailyValue }} L / jour</p>
       <div class="content-chart">
         <canvas id="planet-chart"></canvas>
       </div>

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <!-- <Introduction /> -->
+
     <div class="content-tips" v-bind:class="`${this.isOpen ? 'is-open' : ''}`">
       <img
         v-on:click="isOpen = !isOpen"
@@ -84,8 +85,8 @@
       <!--------------->
       <!---  TIPS ---->
       <!--------------->
-      <div class="btn-tips" v-on:click="this.openTips">
-        <p>astuces</p>
+      <div v-if="this.index == 2 || this.index == 4 || this.index == 6" class="btn-tips" v-on:click="this.openTips">
+             <img style="width: 35px" :src="'./img/plus.png'" alt="astuce" />
       </div>
 
       <div class="c-header">
@@ -208,19 +209,48 @@
         </swiper-slide>
 
         <swiper-slide>
-          <Slider5 />
+          <Slider5 @child-total1="totalValue1" />
         </swiper-slide>
 
         <swiper-slide>
-          <Slider6 />
+          <Slider6 @child-total2="totalValue2" />
         </swiper-slide>
 
         <swiper-slide>
-          <Slider7 />
+          <Slider7 @child-total3="totalValue3" />
         </swiper-slide>
 
         <swiper-slide>
-          <Slider8 />
+          <Slider8 @child-total4="totalValue4" />
+        </swiper-slide>
+
+        <swiper-slide>
+          <!-- <SliderDone v-bind:totalAll="total1" /> -->
+          <div
+            style="height: 100%"
+            class="u-flex justify-content-center align-items-center"
+          >
+            <div class="col-8">
+              <h2 class="h2">
+                Votre note: {{ total1 + total2 + total3 + total4 }} / 42
+              </h2>
+              <p v-if="total1 + total2 + total3 + total4 < 20">
+                Aïe... le zéro déchet ne semble pas être votre priorité.
+                Redoublez d’efforts en lisant nos astuces et appliquez-les petit
+                à petit dans votre quotidien.
+              </p>
+              <p v-if="total1 + total2 + total3 + total4 < 28">
+                Pas mal ! Mais vous pouvez mieux faire pour atteindre un mode de
+                vie plus sain pour l’environnement. Assurez-vous d’avoir bien
+                appliquer nos astuces dans votre quotidien.
+              </p>
+              <p v-else>
+                Bravo ! Vous êtes un bon exemple d’un mode de vie sain pour
+                l’environnement. Continuez à préserver et n’oubliez pas d’en
+                parler autour de vous en partageant notre site par exemple.
+              </p>
+            </div>
+          </div>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
@@ -236,7 +266,7 @@ import Chart from "chart.js";
 import planetChartData from "./chart-data.js";
 import myBarChart from "./chart-data-2.js";
 import myBubbleChart from "./chart-data-3.js";
-
+import axios from "axios";
 import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 import Slider1 from "../src/views/Slider-1";
@@ -247,6 +277,7 @@ import Slider5 from "../src/views/Slider-5";
 import Slider6 from "../src/views/Slider-6";
 import Slider7 from "../src/views/Slider-7";
 import Slider8 from "../src/views/Slider-8";
+// import SliderDone from "../src/views/Slider-done";
 // import Introduction from "../src/views/Introduction";
 import Slider2Intro from "../src/views/Slider2Intro";
 import Slider3Intro from "../src/views/Slider3Intro";
@@ -265,6 +296,7 @@ export default {
     Slider6,
     Slider7,
     Slider8,
+    // SliderDone,
     Slider2Intro,
     Slider3Intro,
     Slider4Intro,
@@ -277,15 +309,21 @@ export default {
   name: "App",
   data() {
     return {
+      info: [],
       isOpen: false,
       isPaused: true,
       index: 0,
+      total1: 0,
+      total2: 0,
+      total3: 0,
+      total4: 0,
       next: 0,
       scrollbar: {
         el: ".swiper-scrollbar",
         draggable: true,
       },
       swiperOptions: {
+        allowTouchMove: false,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -300,19 +338,42 @@ export default {
     swiper() {
       return this.$refs.mySwiper.$swiper;
     },
+    total() {
+      return this.total1 + this.total2 + this.total3 + this.total4;
+    },
   },
   mounted() {
+    axios
+      .get("https://api.coindesk.com/v1/bpi/currentprice.json")
+      .then((response) => (this.info = response));
+
+    //
     this.createChart("planet-chart", this.planetChartData);
     this.createChart("bar-chart", this.myBarChart);
     this.createChart("bubble-chart", this.myBubbleChart);
   },
   methods: {
+    // Gets the checkbox information from the child component
+    totalValue1: function (params) {
+      this.total1 = params;
+    },
+    totalValue2: function (params) {
+      this.total2 = params;
+    },
+    totalValue3: function (params) {
+      this.total3 = params;
+    },
+    totalValue4: function (params) {
+      this.total4 = params;
+    },
+
     togglePlay() {
       this.isPaused = !this.isPaused;
       var myAudio = document.getElementById("audio");
       myAudio.volume = 0.3;
       return myAudio.paused ? myAudio.play() : myAudio.pause();
     },
+
     // Chart
     createChart(chartId, chartData) {
       const ctx = document.getElementById(chartId);
@@ -326,7 +387,7 @@ export default {
 
     changeSwiperIndex() {
       this.index = this.$refs.mySwiper.$swiper.activeIndex;
-      console.log(this.index);
+      // console.log(this.index);
       timeline.from(".c-slide__title", 1, {
         y: 30,
         opacity: 0,
