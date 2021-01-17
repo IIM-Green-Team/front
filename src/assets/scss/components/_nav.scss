@@ -22,7 +22,7 @@ nav {
     height: 20px;
     border: solid 2px $color-black;
     border-radius: 50%;
-    background-color: $color-green;
+    background-color: $color-white;
 
     &:hover {
       cursor: pointer;
@@ -40,7 +40,7 @@ nav {
         width: 15px;
         height: 15px;
         border-radius: 50%;
-        background-color: $color-yellow
+        background-color: $color-green
       }
     }
 
