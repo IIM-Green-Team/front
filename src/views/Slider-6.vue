@@ -1,6 +1,7 @@
 <template>
   <div class="c-form">
     <div class="u-flex">
+      <p class="text--xl">2 / 4 </p>
       <p class="col-12 c-form__title">
         À quelle fréquence achetez-vous vos vêtements ?
       </p>

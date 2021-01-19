@@ -1,6 +1,7 @@
 <template>
   <div class="c-form">
     <div class="u-flex">
+        <p class="text--xl">1 / 4 </p>
       <p class="col-12 c-form__title">Achètes-tu uniquement du bio ?</p>
       <div class="c-form__group c-form__group--radio">
         <input

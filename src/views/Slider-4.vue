@@ -1,13 +1,13 @@
 <template>
   <div class="u-flex c-graph4 slider-4">
     <div class="col-12">
-      <p class=" h3 u-center">NOTRE CONSOMMATION EN EAU</p>
+      <p class=" h3 u-center u-blue">NOTRE CONSOMMATION EN EAU</p>
       <p class="title p-italic">
         → La consommation moyenne d'eau d'un francais par jour ...
       </p>
     </div>
     <div class="col-12">
-      <p class="text--xl u-center">{{ this.dailyValue }} L / jour</p>
+      <p class="text--xl u-center u-blue">{{ this.dailyValue }} L / jour</p>
       <div class="content-chart">
         <canvas id="planet-chart"></canvas>
       </div>

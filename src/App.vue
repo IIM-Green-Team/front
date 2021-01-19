@@ -161,7 +161,7 @@
             </li>
           </ul>
         </nav>
-        <div v-if="this.index <= 7" class="btn-next swiper-button-next">
+        <div v-if="this.index <= 6" class="btn-next swiper-button-next">
           <div class="content"></div>
           <div class="arrow"></div>
         </div>
