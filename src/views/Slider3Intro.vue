@@ -1,17 +1,17 @@
 <template>
   <div
     style="height: 100%"
-    class="u-flex justify-content-center align-items-center"
+    class="u-flex justify-content-center align-items-center slider-3"
   >
     <div class="col-8">
       <h2 class="h2 u-yellow u-center u-yellow">TEXTILE</h2>
-      <p>Notre impact sur l'environnement à travers le textile ...</p>
+      <p class="u-center">Notre impact sur l'environnement à travers le textile ...</p>
       <div class="u-flex justify-content-between align-items-center">
         <img style="width: 20%" :src="'./img/eiffel.png'" alt="" />
         <p style="width: 70%">
           Entre <span class="u-yellow text--xl">10 000</span> et
           <span class="u-yellow text--xl">20 000</span> tonnes de produits textiles sont
-          détruits en France soit l’équivalent du poids d’un ou deux Tour Eiffe
+          détruits en France soit l’équivalent du poids d’un ou deux Tour Eiffel
         </p>
       </div>
       <div class="u-flex justify-content-between align-items-center">

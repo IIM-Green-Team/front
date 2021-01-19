@@ -1,6 +1,7 @@
 <template>
   <div class="c-form">
     <div class="u-flex">
+        <p class="text--xl">3 / 4 </p>
       <p class="col-12 c-form__title">
         Tries-tu les journaux, les boîtes en carton, le papier, les boîtes de
         conserve, les bouteilles en verre ou en plastique et autres matériaux ?

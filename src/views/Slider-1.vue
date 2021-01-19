@@ -2,7 +2,7 @@
   <div class="slider-1">
     <div class="c-graph u-flex u-center">
       <div class="col-12">
-        <p class="h3">Notre planète</p>
+        <p class="h3 u-color-lightgreen">Notre planète</p>
       </div>
       <div class="col-2 column-planet">
         <div class="u-flex align-items-center">
@@ -30,7 +30,7 @@
             <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
           </div>
         </div>
-        <span class="text--xl">5,2</span>
+        <span class="text--xl u-color-lightgreen">5,2</span>
       </div>
       <div class="col-2 column-planet">
         <div class="u-flex align-items-center">
@@ -43,7 +43,7 @@
             <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
           </div>
         </div>
-        <span class="text--xl">5</span>
+        <span class="text--xl u-color-lightgreen">5</span>
       </div>
       <div class="col-2 column-planet">
         <div class="u-flex align-items-center">
@@ -54,7 +54,7 @@
             <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
           </div>
         </div>
-        <span class="text--xl">3</span>
+        <span class="text--xl u-color-lightgreen">3</span>
       </div>
       <div class="col-2 column-planet">
         <div class="u-flex align-items-center">
@@ -64,7 +64,7 @@
             <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
           </div>
         </div>
-        <span class="text--xl">2,1</span>
+        <span class="text--xl u-color-lightgreen">2,1</span>
       </div>
       <div class="col-2 column-planet">
         <div class="u-flex align-items-center">
@@ -73,7 +73,7 @@
             <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
           </div>
         </div>
-        <span class="text--xl">0,6</span>
+        <span class="text--xl u-color-lightgreen">0,6</span>
       </div>
     </div>
     <p class="p-italic u-center">

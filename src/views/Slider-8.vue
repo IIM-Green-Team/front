@@ -1,6 +1,7 @@
 <template>
   <div class="c-form">
     <div class="u-flex">
+        <p class="text--xl">4 / 4 </p>
       <p class="col-12 c-form__title">
         Quelle est la durée moyenne de vos douches ?
       </p>

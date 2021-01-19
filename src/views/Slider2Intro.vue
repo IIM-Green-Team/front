@@ -1,13 +1,13 @@
 <template>
   <div
     style="height: 100%"
-    class="u-flex justify-content-center align-items-center"
+    class="u-flex justify-content-center align-items-center slider-2"
   >
     <div class="col-8">
-      <h2 class="h2 u-red">
+      <h2 class="h2 u-red u-center">
         ALIMENTATION
       </h2>
-      <p class="">Notre impact sur l'environnement à travers l'alimentation</p>
+      <p class="u-center">Notre impact sur l'environnement à travers l'alimentation</p>
       <div class="u-flex justify-content-between align-items-center">
         <img style="width: 20%" :src="'./img/earth-red.png'" alt="" />
         <p style="width: 70%">
