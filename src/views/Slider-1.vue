@@ -4,77 +4,12 @@
       <div class="col-12">
         <p class="h3 u-color-lightgreen">Notre planète</p>
       </div>
-      <div class="col-2 column-planet">
-        <div class="u-flex align-items-center">
-          <p class="u-rotate text--md">Australie</p>
-          <div class="u-flex flex-column align-items-center">
-            <img
-              ref="one"
-              class="img-planet"
-              :src="'./img/earth.png'"
-              alt="ecologie"
-            />
-            <img
-              ref="two"
-              class="img-planet"
-              :src="'./img/earth.png'"
-              alt="ecologie"
-            />
-            <img
-              ref="three"
-              class="img-planet"
-              :src="'./img/earth.png'"
-              alt="ecologie"
-            />
-            <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
-            <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
-          </div>
-        </div>
-        <span class="text--xl u-color-lightgreen">5,2</span>
-      </div>
-      <div class="col-2 column-planet">
-        <div class="u-flex align-items-center">
-          <p class="u-rotate text--md">Etats-Unis</p>
-          <div class="u-flex flex-column align-items-center">
-            <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
-            <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
-            <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
-            <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
-            <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
-          </div>
-        </div>
-        <span class="text--xl u-color-lightgreen">5</span>
-      </div>
-      <div class="col-2 column-planet">
-        <div class="u-flex align-items-center">
-          <p class="u-rotate text--md">France</p>
-          <div class="u-flex flex-column align-items-center">
-            <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
-            <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
-            <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
-          </div>
-        </div>
-        <span class="text--xl u-color-lightgreen">3</span>
-      </div>
-      <div class="col-2 column-planet">
-        <div class="u-flex align-items-center">
-          <p class="u-rotate text--md">Chine</p>
-          <div class="u-flex flex-column align-items-center">
-            <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
-            <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
-          </div>
-        </div>
-        <span class="text--xl u-color-lightgreen">2,1</span>
-      </div>
-      <div class="col-2 column-planet">
-        <div class="u-flex align-items-center">
-          <p class="u-rotate text--md">Inde</p>
-          <div class="u-flex flex-column align-items-center">
-            <img class="img-planet" :src="'./img/earth.png'" alt="ecologie" />
-          </div>
-        </div>
-        <span class="text--xl u-color-lightgreen">0,6</span>
-      </div>
+      <earth-bar 
+        v-for="([country, value], index) in countriesArray"
+        :key="index"
+        :count="value"
+        :name="country"
+      />
     </div>
     <p class="p-italic u-center">
       → Combien de planète Terre faudrait-il si la population mondiale vivait
@@ -85,40 +20,24 @@
 
 
 <script>
-import { TimelineLite, Back } from "gsap";
+import EarthBar from '../components/charts-utils/EarthBar.vue';
 export default {
-  mounted() {
-    const { one, two, three } = this.$refs;
-    const timeline = new TimelineLite();
-
-    timeline.from(three, 1, {
-      y: -50,
-      opacity: 0,
-      delay: 0.2,
-      ease: Back.easeInOut,
-    });
-    timeline.from(
-      two,
-      1,
-      {
-        y: -50,
-        opacity: 0,
-        delay: 0.2,
-        ease: Back.easeInOut,
+  components: { EarthBar },
+  data() {
+    return {
+      countries: {
+        'Australie': 5.2,
+        'États-Unis': 5,
+        'France': 3,
+        'Chine': 2.1,
+        'Inde': 0.6,
       },
-      "-=1"
-    );
-    timeline.from(
-      one,
-      1,
-      {
-        y: -50,
-        opacity: 0,
-        delay: 0.2,
-        ease: Back.easeInOut,
-      },
-      "-=1"
-    );
+    }
+  },
+  computed: {
+    countriesArray() {
+      return Object.entries(this.countries) 
+    }
   },
 };
 </script>
