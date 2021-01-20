@@ -2,7 +2,9 @@
   <div id="app">
     <Introduction 
       v-show="!isDev"
+      @showapp="onAppShow"
     />
+
 
     <div class="content-tips" v-bind:class="`${this.isOpen ? 'is-open' : ''}`">
       <img
@@ -179,7 +181,7 @@
         @slideChange="changeSwiperIndex"
       >
         <swiper-slide>
-          <Slider1 />
+          <Slider1 :app-show="appShow"/>
         </swiper-slide>
 
         <swiper-slide>
@@ -334,6 +336,7 @@ export default {
       planetChartData: planetChartData,
       myBarChart: myBarChart,
       myBubbleChart: myBubbleChart,
+      appShow: process.env.NODE_ENV === 'development' ? true : false,
     };
   },
   computed: {
@@ -392,7 +395,6 @@ export default {
 
     changeSwiperIndex() {
       this.index = this.$refs.mySwiper.$swiper.activeIndex;
-      // console.log(this.index);
       timeline.from(".c-slide__title", 1, {
         y: 30,
         opacity: 0,
@@ -408,6 +410,9 @@ export default {
     openTips() {
       this.isOpen = !this.isOpen;
     },
+    onAppShow() {
+      this.appShow = true
+    }
   },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="slider-1">
-    <div class="c-graph u-flex u-center">
+    <div class="c-graph u-flex u-center" v-if="appShow">
       <div class="col-12">
         <p class="h3 u-color-lightgreen">Notre planète</p>
       </div>
@@ -33,6 +33,12 @@ export default {
         'Inde': 0.6,
       },
     }
+  },
+  props: {
+    appShow: {
+      type: Boolean,
+      default: false
+    },
   },
   computed: {
     countriesArray() {
