@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <!-- <Introduction /> -->
+    <Introduction 
+      v-show="!isDev"
+      @showapp="onAppShow"
+    />
+
 
     <div class="content-tips" v-bind:class="`${this.isOpen ? 'is-open' : ''}`">
       <img
@@ -177,7 +181,7 @@
         @slideChange="changeSwiperIndex"
       >
         <swiper-slide>
-          <Slider1 />
+          <Slider1 :app-show="appShow"/>
         </swiper-slide>
 
         <swiper-slide>
@@ -278,7 +282,7 @@ import Slider6 from "../src/views/Slider-6";
 import Slider7 from "../src/views/Slider-7";
 import Slider8 from "../src/views/Slider-8";
 // import SliderDone from "../src/views/Slider-done";
-// import Introduction from "../src/views/Introduction";
+import Introduction from "../src/views/Introduction";
 import Slider2Intro from "../src/views/Slider2Intro";
 import Slider3Intro from "../src/views/Slider3Intro";
 import Slider4Intro from "../src/views/Slider4Intro";
@@ -301,7 +305,7 @@ export default {
     Slider3Intro,
     Slider4Intro,
     Slider5Intro,
-    // Introduction,
+    Introduction,
   },
   directives: {
     swiper: directive,
@@ -332,6 +336,7 @@ export default {
       planetChartData: planetChartData,
       myBarChart: myBarChart,
       myBubbleChart: myBubbleChart,
+      appShow: process.env.NODE_ENV === 'development' ? true : false,
     };
   },
   computed: {
@@ -341,6 +346,9 @@ export default {
     total() {
       return this.total1 + this.total2 + this.total3 + this.total4;
     },
+    isDev() {
+      return process.env.NODE_ENV === 'development'
+    }
   },
   mounted() {
     axios
@@ -382,12 +390,11 @@ export default {
         data: chartData.data,
         options: chartData.options,
       });
-      console.log(myChart);
+      return myChart;
     },
 
     changeSwiperIndex() {
       this.index = this.$refs.mySwiper.$swiper.activeIndex;
-      // console.log(this.index);
       timeline.from(".c-slide__title", 1, {
         y: 30,
         opacity: 0,
@@ -403,6 +410,9 @@ export default {
     openTips() {
       this.isOpen = !this.isOpen;
     },
+    onAppShow() {
+      this.appShow = true
+    }
   },
 };
 </script>
