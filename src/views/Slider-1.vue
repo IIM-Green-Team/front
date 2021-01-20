@@ -21,17 +21,18 @@
 
 <script>
 import EarthBar from '../components/charts-utils/EarthBar.vue';
+import { getApi } from '../utils/api'
+import { countries } from '../utils/fallbackData'
+
 export default {
   components: { EarthBar },
+  async created() {
+    const res = await getApi('/planet', countries)
+    this.countries = res.data
+  },
   data() {
     return {
-      countries: {
-        'Australie': 5.2,
-        'États-Unis': 5,
-        'France': 3,
-        'Chine': 2.1,
-        'Inde': 0.6,
-      },
+      countries: []
     }
   },
   props: {
