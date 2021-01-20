@@ -1,7 +1,7 @@
 <template>
   <div class="col-2 column-planet">
     <div class="u-flex align-items-center">
-      <p class="u-rotate text--md">{{ name }}</p>
+      <p class="u-rotate text--md" data-testid="country">{{ name }}</p>
       <div class="u-flex flex-column align-items-center">
         <img 
           v-for="(planet, index) in planetCount"
@@ -10,10 +10,11 @@
           class="img-planet"
           :src="'./img/earth.png'" 
           alt="ecologie"
+          data-testid="planet"
         />
       </div>
     </div>
-    <span class="text--xl u-color-lightgreen">{{ count | addComma }}</span>
+    <span class="text--xl u-color-lightgreen" data-testid="count">{{ count | addComma }}</span>
   </div>
 </template>
 
