@@ -11,6 +11,13 @@
     </p>
 
     <button v-on:click="onHide" ref="btn" class="c-loading__btn">Découvrir</button>
+    <a
+      v-if="showPassIntro"
+      @click="onHide"
+      class="c-loading__pass-intro"
+    >
+      Passer l'introduction
+    </a>
   </div>
 </template>
 
@@ -20,12 +27,18 @@ export default {
   data() {
     return {
       isHidden: false,
+      showPassIntro: false
     };
   },
   mounted() {
     const { line, line2, line3, btn } = this.$refs;
     const timeline = new TimelineLite();
     const delay = v => process.env.NODE_ENV === 'development' ? 0.002 : v
+
+    window.setTimeout(() => {
+      this.showPassIntro = true
+    }, 3000)
+  
     timeline.from(line, delay(1), {
       y: 100,
       opacity: 0,
@@ -80,6 +93,9 @@ export default {
       delay: delay(0.5),
       skewY: 2,
       ease: Back.out,
+      onComplete: () => {
+        this.showPassIntro = false
+      }
     });
   },
 
