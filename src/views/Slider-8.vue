@@ -11,11 +11,11 @@
           type="radio"
           name="q14"
           id="40"
-          value="1"
+          value="4"
           v-model="picked11"
           required
         />
-        <label for="40">Plusieurs fois par semaine <span></span></label>
+        <label for="40"> inférieur à 5 min <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
         <input
@@ -23,11 +23,11 @@
           type="radio"
           name="q14"
           id="41"
-          value="2"
+          value="3"
           v-model="picked11"
           required
         />
-        <label for="41">Une fois par mois <span></span></label>
+        <label for="41">environ 10 min <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
         <input
@@ -35,11 +35,11 @@
           type="radio"
           name="q14"
           id="42"
-          value="3"
+          value="2"
           v-model="picked11"
           required
         />
-        <label for="42">Une fois par an <span></span></label>
+        <label for="42">environ 15 min <span></span></label>
       </div>
       <div class="c-form__group c-form__group--radio">
         <input
@@ -47,11 +47,11 @@
           type="radio"
           name="q14"
           id="43"
-          value="4"
+          value="1"
           v-model="picked11"
           required
         />
-        <label for="43">Jamais <span></span></label>
+        <label for="43">Plus de 20 min <span></span></label>
       </div>
     </div>
     <div class="u-flex">

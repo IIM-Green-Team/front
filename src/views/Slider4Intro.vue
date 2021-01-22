@@ -9,13 +9,13 @@
       <div class="u-flex justify-content-between align-items-center">
         <img style="width: 30%" :src="'./img/water-1.png'" alt="" />
         <p style="width: 70%">
-          Entre <span class="u-blue text--xl">48%</span> de la consommation
+          Entre <span id="counter-2" class="u-blue text--xl">48%</span> de la consommation
           d'eau est majotirairement utilisée pour l'irrigation.
         </p>
       </div>
       <div class="u-flex justify-content-between align-items-center">
         <p style="width: 70%">
-          <span class="u-blue text--xl">22% </span> essenciellement utilisés
+          <span id="counter-3" class="u-blue text--xl">22% </span> essenciellement utilisés
           pour le refroidissement des centrales thermiques et nucléaires
         </p>
         <img style="width: 30%" :src="'./img/water-2.png'" alt="" />
