@@ -89,8 +89,12 @@
       <!--------------->
       <!---  TIPS ---->
       <!--------------->
-      <div v-if="this.index == 2 || this.index == 4 || this.index == 6" class="btn-tips" v-on:click="this.openTips">
-             <img style="width: 35px" :src="'./img/plus.png'" alt="astuce" />
+      <div
+        v-if="this.index == 2 || this.index == 4 || this.index == 6"
+        class="btn-tips"
+        v-on:click="this.openTips"
+      >
+        <img style="width: 35px" :src="'./img/plus.png'" alt="astuce" />
       </div>
 
       <div class="c-header">
@@ -263,7 +267,7 @@
 </template>
 
 <script>
-import { TimelineLite, Back } from "gsap";
+import { TimelineLite, TweenLite, Back } from "gsap";
 const timeline = new TimelineLite();
 
 import Chart from "chart.js";
@@ -400,6 +404,16 @@ export default {
         opacity: 0,
         delay: 0.1,
         ease: Back.easeInOut,
+      });
+      var Cont = { val: 0 },
+        NewVal = 75 + "%";
+
+      TweenLite.to(Cont, 2, {
+        val: NewVal,
+        roundProps: "val",
+        onUpdate: function () {
+          document.getElementById("counter").innerHTML = Cont.val;
+        },
       });
     },
 
