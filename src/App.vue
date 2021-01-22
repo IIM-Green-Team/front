@@ -401,23 +401,66 @@ export default {
         delay: 0.1,
         ease: Back.easeInOut,
       });
-      var Cont = { val: 0, val2: 0, val3: 0, val4: 0 },
-        NewVal = 75 + "%",
-        NewVal2 = 48 + "%",
-        NewVal3 = 22 + "%",
-        NewVal4 = 30 + "kg";
-
+      var Cont = { val: 0 },
+        NewVal = 75 + "%";
       TweenLite.to(Cont, 2, {
         val: NewVal,
-        val2: NewVal2,
-        val3: NewVal3,
-        val4: NewVal4,
         roundProps: "val",
         onUpdate: function () {
           document.getElementById("counter").innerHTML = Cont.val;
-          document.getElementById("counter-2").innerHTML = Cont.val2;
-          document.getElementById("counter-3").innerHTML = Cont.val3;
-          document.getElementById("counter-4").innerHTML = Cont.val4;
+        },
+      });
+
+      var Cont2 = { val2: 0 },
+        NewVal2 = 48 + "%";
+      TweenLite.to(Cont2, 2, {
+        val2: NewVal2,
+        roundProps: "val2",
+        onUpdate: function () {
+          document.getElementById("counter-2").innerHTML = Cont2.val2;
+        },
+      });
+
+      var Cont3 = { val3: 0 },
+        NewVal3 = 22 + "%";
+      TweenLite.to(Cont3, 2, {
+        val3: NewVal3,
+        roundProps: "val3",
+        onUpdate: function () {
+          document.getElementById("counter-3").innerHTML = Cont3.val3;
+        },
+      });
+
+      var Cont4 = { val4: 0 },
+        NewVal4 = 30 + "kg";
+
+      TweenLite.to(Cont4, 2, {
+        val4: NewVal4,
+        roundProps: "val4",
+        onUpdate: function () {
+          document.getElementById("counter-4").innerHTML = Cont4.val4;
+        },
+      });
+
+      var Cont5 = { val5: 0 },
+        NewVal5 = 148 + "L / jour";
+
+      TweenLite.to(Cont5, 2, {
+        val5: NewVal5,
+        roundProps: "val5",
+        onUpdate: function () {
+          document.getElementById("counter-5").innerHTML = Cont5.val5;
+        },
+      });
+
+      var Cont6 = { val6: 0 },
+        NewVal6 = 70;
+
+      TweenLite.to(Cont6, 2, {
+        val6: NewVal6,
+        roundProps: "val6",
+        onUpdate: function () {
+          document.getElementById("counter-6").innerHTML = Cont6.val6;
         },
       });
     },
