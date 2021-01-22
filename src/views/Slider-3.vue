@@ -13,7 +13,7 @@
       </p>
       <br />
       <p>
-        <span class="text--xl u-yellow">70 douches </span> pour produire une
+        <span id="counter-6" class="text--xl u-yellow">70</span>douches pour produire une
         chemise.
       </p>
     </div>

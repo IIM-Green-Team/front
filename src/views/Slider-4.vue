@@ -7,7 +7,7 @@
       </p>
     </div>
     <div class="col-12">
-      <p class="text--xl u-center u-blue">{{ this.dailyValue }} L / jour</p>
+      <p id="counter-5" class="text--xl u-center u-blue">{{ this.dailyValue }} L / jour</p>
       <div class="content-chart">
         <canvas id="planet-chart"></canvas>
       </div>
