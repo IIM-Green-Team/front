@@ -44,4 +44,12 @@
       cursor: pointer;
     }
   }
+
+  &__pass-intro {
+    position: absolute;
+    cursor: pointer;
+    bottom: 50px;
+    right: 50px;
+    font-size: 16px;
+  }
 }
