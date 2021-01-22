@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <Introduction 
-      v-show="!isDev"
-      @showapp="onAppShow"
-    />
-
+    <Introduction v-show="!isDev" @showapp="onAppShow" />
 
     <div class="content-tips" v-bind:class="`${this.isOpen ? 'is-open' : ''}`">
       <img
@@ -185,7 +181,7 @@
         @slideChange="changeSwiperIndex"
       >
         <swiper-slide>
-          <Slider1 :app-show="appShow"/>
+          <Slider1 :app-show="appShow" />
         </swiper-slide>
 
         <swiper-slide>
@@ -340,7 +336,7 @@ export default {
       planetChartData: planetChartData,
       myBarChart: myBarChart,
       myBubbleChart: myBubbleChart,
-      appShow: process.env.NODE_ENV === 'development' ? true : false,
+      appShow: process.env.NODE_ENV === "development" ? true : false,
     };
   },
   computed: {
@@ -351,8 +347,8 @@ export default {
       return this.total1 + this.total2 + this.total3 + this.total4;
     },
     isDev() {
-      return process.env.NODE_ENV === 'development'
-    }
+      return process.env.NODE_ENV === "development";
+    },
   },
   mounted() {
     axios
@@ -405,14 +401,23 @@ export default {
         delay: 0.1,
         ease: Back.easeInOut,
       });
-      var Cont = { val: 0 },
-        NewVal = 75 + "%";
+      var Cont = { val: 0, val2: 0, val3: 0, val4: 0 },
+        NewVal = 75 + "%",
+        NewVal2 = 48 + "%",
+        NewVal3 = 22 + "%",
+        NewVal4 = 30 + "kg";
 
       TweenLite.to(Cont, 2, {
         val: NewVal,
+        val2: NewVal2,
+        val3: NewVal3,
+        val4: NewVal4,
         roundProps: "val",
         onUpdate: function () {
           document.getElementById("counter").innerHTML = Cont.val;
+          document.getElementById("counter-2").innerHTML = Cont.val2;
+          document.getElementById("counter-3").innerHTML = Cont.val3;
+          document.getElementById("counter-4").innerHTML = Cont.val4;
         },
       });
     },
@@ -425,8 +430,8 @@ export default {
       this.isOpen = !this.isOpen;
     },
     onAppShow() {
-      this.appShow = true
-    }
+      this.appShow = true;
+    },
   },
 };
 </script>

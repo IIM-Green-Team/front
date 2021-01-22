@@ -8,7 +8,7 @@
     </div>
     <div class="col-4">
       <p style="margin-bottom: 20px">
-        <span class="text--xl u-yellow">30 Kg </span> d'habits achetés chaque
+        <span id="counter-4" class="text--xl u-yellow">30 Kg </span> d'habits achetés chaque
         année en France
       </p>
       <br />

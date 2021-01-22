@@ -12,7 +12,7 @@
           type="radio"
           name="q8"
           id="26"
-          value="1"
+          value="2"
           v-model="picked8"
           required
         />
@@ -24,7 +24,7 @@
           type="radio"
           name="q8"
           id="27"
-          value="2"
+          value="1"
           v-model="picked8"
           required
         />
@@ -39,7 +39,7 @@
           type="radio"
           name="q9"
           id="28"
-          value="1"
+          value="2"
           v-model="picked9"
           required
         />
@@ -51,7 +51,7 @@
           type="radio"
           name="q9"
           id="29"
-          value="2"
+          value="1"
           v-model="picked9"
           required
         />
@@ -66,7 +66,7 @@
           type="radio"
           name="q10"
           id="30"
-          value="1"
+          value="4"
           v-model="picked10"
           required
         />
@@ -78,7 +78,7 @@
           type="radio"
           name="q11"
           id="31"
-          value="2"
+          value="3"
           v-model="picked10"
           required
         />
@@ -90,7 +90,7 @@
           type="radio"
           name="q12"
           id="32"
-          value="3"
+          value="2"
           v-model="picked10"
           required
         />
@@ -102,7 +102,7 @@
           type="radio"
           name="q13"
           id="33"
-          value="4"
+          value="1"
           v-model="picked10"
           required
         />
