@@ -2,7 +2,7 @@
 
 ## URL
 
-https://zerodechet.netlify.app
+https://zerodechet.io
 
 ## Project setup
 ```
